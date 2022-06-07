@@ -1,0 +1,94 @@
+.button
+  outline: none
+  padding: 11px 20px
+  border: none
+  border-radius: 2px
+  text-transform: uppercase
+  font-size: 0.85rem
+  &:hover
+    cursor: pointer
+  &--primary
+    background-color: $primary
+    color: $light
+    box-shadow: 0px 5px 15px rgba($primary, 0.2)
+    transition: box-shadow 0.3s
+    &:hover
+      box-shadow: none
+  &--outline
+    border: 1px solid $light
+    background-color: transparent
+    color: $light
+.instagram
+  &__link
+    display: flex
+    flex-direction: row
+    align-items: center
+    color: $primary
+    text-transform: uppercase
+    text-decoration: none
+    line-height: 0.8
+    font-size: 0.95rem
+    transform: rotate(90deg)
+    &::after
+      content: ''
+      width: 51px
+      height: 1px
+      margin-left: 12px
+      background: $primary
+.title
+  font-family: Yeseva One
+  font-size: 2.85rem
+  font-weight: 400
+  line-height: 3.9rem
+  color: $light
+  text-transform: uppercase
+  &--primary
+    color: $primary
+// Бургер меню
+.burger__menu
+  position: absolute
+  right: 30px
+  top: 26px
+  display: none
+  width: 30px
+  height: 30px
+  // background:  red
+  &>div
+    width: 30px
+    height: 3px
+    background: $primary
+    transition: 0.2s
+    opacity: 1
+    &:first-child,
+    &:last-child
+      transform-origin: center left
+  &--active
+    &>div:first-child
+      width: 39px
+      margin-left: 1px
+      transform: rotate(45deg)
+    &>div:nth-of-type(2)
+      opacity: 0
+    &>div:last-child
+      width: 39px
+      margin-left: 1px
+      transform: rotate(-45deg)
+      
+      
+@media screen and (max-width: 992px)
+  .burger__menu
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+@media screen and (max-width: 570px)
+  .hero__scroll-down
+    display: none
+  .contacts
+    &__button
+      display: none
+    &__phone 
+      margin-right: 0
+      color: #ffffff
+      text-decoration: none
+  
