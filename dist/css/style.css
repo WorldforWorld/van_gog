@@ -1144,7 +1144,7 @@ body {
   font-size: 1rem;
 }
 
-section {
+section:not(:first-child) {
   margin-top: 70px;
 }
 
@@ -1367,19 +1367,28 @@ img {
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 11;
+}
+.header__scroll--js .header__contacts {
+  height: 0 !important;
+}
+.header__scroll--js .header__menu, .header__scroll--js .header__nav {
+  margin-top: 0;
 }
 
 .menu {
   display: flex;
   flex-direction: column;
   margin-top: 0.6875rem;
+  transition: 0.4s;
 }
 
 .contacts {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  overflow: hidden;
+  transition: 0.4s;
 }
 .contacts a {
   font-family: "Gotham Pro", sans-serif;
@@ -1440,6 +1449,7 @@ a.logo span {
 
 .nav {
   margin-top: 0.6875rem;
+  transition: 0.4s;
 }
 .nav ul {
   display: flex;

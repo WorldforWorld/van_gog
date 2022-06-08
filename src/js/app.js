@@ -61,4 +61,17 @@ const rentalSwiper = new Swiper ('.rental__swiper', {
 
 });
 
+// Скролл меню
+const headerContacts = document.querySelector('.header__contacts');
+headerContacts.style.height = headerContacts.clientHeight + 'px';
+headerContacts.classList.add('height--js');
+window.addEventListener('scroll', function () {
+  const header = document.querySelector('.header');
+  const y = window.scrollY;
+  if (y > 200) {
+    header.classList.add('header__scroll--js');
+  } else if (y < 100) {
+    header.classList.remove('header__scroll--js');
+  }
+});
 // Отчет отступа от высоты меню
