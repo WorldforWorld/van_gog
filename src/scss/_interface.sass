@@ -11,52 +11,140 @@
   transition: 0.3s
   &:hover
     background-color: $primary-hov
-
-.swiper
-  &-button
-    &-prev,
-    &-next
-      width: 23px
-      height: 12px
-      color: $light
-      transition: 0.2s
-      &:hover
-        color: $primary-hov
-      &::after
-        display: none
-    &-prev
-      left: -39px
-    &-next
-      right: -39px
-      transform: rotate(180deg)
-      
-  &-pagination
-    &-bullet
-      display: flex
-      justify-content: center
-      align-items: center
-      position: relative
-      opacity: 1
-      width: 4px
-      height: 4px
-      border-radius: 50%
-      background-color: $light   
-      &-active
-        background-color: $primary-hov
+.hero
+  & .swiper
+    &-button
+      &-prev,
+      &-next
+        width: 23px
+        height: 12px
+        color: $light
+        transition: 0.2s
+        &:hover
+          color: $primary-hov
+        &::after
+          display: none
       &-prev
-        &::before
-          position: absolute
-          content: ''
-          display: inline-block
-          width: 16px
-          height: 16px
-          border-radius: 50%
-          border: 2px solid $light
-          border-top: 2px solid $light-text
-          animation: spin 3s linear infinite
+        left: -39px
+      &-next
+        right: -39px
+        transform: rotate(180deg)
+        
+    &-pagination
+      &-bullet
+        display: flex
+        justify-content: center
+        align-items: center
+        position: relative
+        opacity: 1
+        width: 4px
+        height: 4px
+        border-radius: 50%
+        background-color: $light   
+        &-active
+          background-color: $primary-hov
+        &-prev
+          &::before
+            position: absolute
+            content: ''
+            display: inline-block
+            width: 16px
+            height: 16px
+            border-radius: 50%
+            border: 2px solid $light
+            border-top: 2px solid $light-text
+            animation: spin 3s linear infinite
 
 @keyframes spin
   0%
     transform: rotate(0)
   100%
     transform: rotate(360deg)
+
+.mouse
+  position: absolute
+  left: -33px
+  bottom: 0
+  display: flex
+  flex-direction: column
+  align-items: center
+  cursor: pointer
+  & svg
+    width: 25px
+    height: 25px
+  &::after
+    content: ''
+    display: inline-block
+    width: 0
+    height: 0
+    margin-top: 24px
+    border-left: 3px solid transparent
+    border-right: 3px solid transparent
+    border-top: 6px solid $light
+    animation: swing 1s ease-in-out infinite
+    animation-direction: alternate
+
+@keyframes swing
+  0%
+    transform: translateY(5px)
+  100%
+    transform: translateY(-5px)
+
+.section
+  &__title
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin: 0
+    font-size: rem(13.5)
+    line-height: rem(20)
+    font-weight: 400
+    text-transform: uppercase
+    letter-spacing: 0.03em
+    color: $text
+    &::before
+      content: ''
+      width: 10px
+      height: 10px
+      display: inline-block
+      background-color: $primary
+      margin-bottom: 10px
+  &__desk
+    margin-top: 6px
+    margin-bottom: 0
+    text-align: center
+    font-family: 'Playfair-Bold'
+    font-size: rem(60)
+    line-height: rem(48)
+    font-weight: 700
+    letter-spacing: 0.02em
+    color: $text
+
+.selection
+  &__item
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 37px 70px 30px 97px
+    text-decoration: none
+    background: $primary
+    width: 50%
+    max-width: 587px
+    transition: 0.2s
+    &:hover
+      background: $primary-hov
+  &__title
+    max-width: 191px
+    font-family: 'Playfair-Bold'
+    font-size: rem(19)
+    line-height: rem(28)
+    font-weight: 700
+    letter-spacing: 0.02em
+    color: $text
+  &__arrow
+    margin-right: 47px
+    margin-left: auto
+  &__image
+    width: 74px
+    height: 74px
+    

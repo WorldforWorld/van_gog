@@ -1,0 +1,58 @@
+.service
+  &__wrap
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+    grid-gap: 30px
+    margin-top: 50px
+  &__item
+    & a
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      text-decoration: none
+      max-width: 340px
+      &:hover
+        & p
+          color: #d39500
+        & img
+          transform: scale(1.1)
+  &__hidden
+    display: inherit
+    overflow: hidden
+  &__image
+    transition: 0.6s
+    width: 100%
+    height: 100%
+  &__ext
+    display: flex
+    margin-left: 34px
+    width: calc( 100% - 34px ) 
+  &__btn
+    width: 44px
+    height: 44px
+    background: $primary url('../img/service/arrowBlack.svg') no-repeat center / 14px 10px
+  &__desk
+    position: relative
+    width: 100%
+    background: red
+    margin: 0
+    padding-bottom: 8px
+    padding-left: 42px
+    font-size: rem(19)
+    line-height: rem(25)
+    font-weight: 700
+    color: $text
+    z-index: 1
+    transition: 0.2s
+    &--short
+      margin-right: 28px
+    &::before
+      content: ''
+      position: absolute
+      display: inline-block
+      right: 0
+      bottom: 0
+      width: 100%
+      height: 99px
+      background: $light
+      z-index: -1

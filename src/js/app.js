@@ -48,4 +48,17 @@ let observer = new MutationObserver(function(mutations) {
 
 observer.observe(pagination, { attributes: true });
 
+
+const rentalSwiper = new Swiper ('.rental__swiper', {
+  loop: true,
+  // autoplay: {
+  //   delay: 5000,
+  // },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+});
+
 // Отчет отступа от высоты меню

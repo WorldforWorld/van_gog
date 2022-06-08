@@ -1,0 +1,27 @@
+.contacts
+  &__wrap
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    margin-bottom: 27px
+  & a
+    &:not(:last-child)
+      padding-right: 55px      
+  &__address,
+  &__mail,
+  &__phone
+    color: $text !important
+    margin-bottom: 30px
+  &__mail
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      left: -31px
+      top: calc(50% - 8px)
+      display: inline-block
+      width: 15px
+      height: 11px
+      background: url('../img/icons/mail.png') no-repeat center / cover
+  &__phone
+    margin-left: 29px

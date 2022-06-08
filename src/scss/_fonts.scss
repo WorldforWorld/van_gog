@@ -15,9 +15,17 @@
 }
 
 @font-face {
-	font-family: 'Playfair-Reg';
+	font-family: 'Playfair';
 	font-display: swap;
 	src: url("../fonts/PlayfairDisplay-Regular.woff"), url("../fonts/PlayfairDisplay-Regular.woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Playfair Italic';
+	font-display: swap;
+	src: url("../fonts/PlayfairDisplay-Italic.woff"), url("../fonts/PlayfairDisplay-Italic.woff2");
 	font-weight: 400;
 	font-style: normal;
 }
