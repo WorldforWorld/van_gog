@@ -1,94 +1,62 @@
-.button
-  outline: none
-  padding: 11px 20px
-  border: none
-  border-radius: 2px
-  text-transform: uppercase
-  font-size: 0.85rem
+.btn
+  display: inline-block
+  padding: 8px 20px
+  font-family: 'Gotham Pro'
+  font-size: rem(18)
+  line-height: rem(38)
+  font-weight: 500
+  color: $text
+  background-color: $primary
+  text-decoration: none
+  transition: 0.3s
   &:hover
-    cursor: pointer
-  &--primary
-    background-color: $primary
-    color: $light
-    box-shadow: 0px 5px 15px rgba($primary, 0.2)
-    transition: box-shadow 0.3s
-    &:hover
-      box-shadow: none
-  &--outline
-    border: 1px solid $light
-    background-color: transparent
-    color: $light
-.instagram
-  &__link
-    display: flex
-    flex-direction: row
-    align-items: center
-    color: $primary
-    text-transform: uppercase
-    text-decoration: none
-    line-height: 0.8
-    font-size: 0.95rem
-    transform: rotate(90deg)
-    &::after
-      content: ''
-      width: 51px
-      height: 1px
-      margin-left: 12px
-      background: $primary
-.title
-  font-family: Yeseva One
-  font-size: 2.85rem
-  font-weight: 400
-  line-height: 3.9rem
-  color: $light
-  text-transform: uppercase
-  &--primary
-    color: $primary
-// Бургер меню
-.burger__menu
-  position: absolute
-  right: 30px
-  top: 26px
-  display: none
-  width: 30px
-  height: 30px
-  // background:  red
-  &>div
-    width: 30px
-    height: 3px
-    background: $primary
-    transition: 0.2s
-    opacity: 1
-    &:first-child,
-    &:last-child
-      transform-origin: center left
-  &--active
-    &>div:first-child
-      width: 39px
-      margin-left: 1px
-      transform: rotate(45deg)
-    &>div:nth-of-type(2)
-      opacity: 0
-    &>div:last-child
-      width: 39px
-      margin-left: 1px
-      transform: rotate(-45deg)
-      
-      
-@media screen and (max-width: 992px)
-  .burger__menu
-    display: flex
-    flex-direction: column
-    justify-content: space-between
+    background-color: $primary-hov
 
-@media screen and (max-width: 570px)
-  .hero__scroll-down
-    display: none
-  .contacts
-    &__button
-      display: none
-    &__phone 
-      margin-right: 0
-      color: #ffffff
-      text-decoration: none
-  
+.swiper
+  &-button
+    &-prev,
+    &-next
+      width: 23px
+      height: 12px
+      color: $light
+      transition: 0.2s
+      &:hover
+        color: $primary-hov
+      &::after
+        display: none
+    &-prev
+      left: -39px
+    &-next
+      right: -39px
+      transform: rotate(180deg)
+      
+  &-pagination
+    &-bullet
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+      opacity: 1
+      width: 4px
+      height: 4px
+      border-radius: 50%
+      background-color: $light   
+      &-active
+        background-color: $primary-hov
+      &-prev
+        &::before
+          position: absolute
+          content: ''
+          display: inline-block
+          width: 16px
+          height: 16px
+          border-radius: 50%
+          border: 2px solid $light
+          border-top: 2px solid $light-text
+          animation: spin 3s linear infinite
+
+@keyframes spin
+  0%
+    transform: rotate(0)
+  100%
+    transform: rotate(360deg)

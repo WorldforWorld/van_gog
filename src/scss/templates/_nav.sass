@@ -1,0 +1,110 @@
+.menu
+  display: flex
+  flex-direction: column
+  margin-top: rem(11)
+
+.contacts
+  display: flex
+  justify-content: space-around
+  align-items: center
+  & a 
+    font-family: 'Gotham Pro', sans-serif
+    font-size: rem(15)
+    line-height: 24px
+    font-weight: 500
+    text-decoration: none
+    color: $light
+    &:not(:nth-of-type(2))
+      color: $light-text
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        left: -31px
+        top: calc(50% - 8px)
+        display: inline-block
+    & span
+      display: block
+      font-weight: 400
+.phone
+  &::before
+    width: 15px
+    height: 15px
+    background: url('../img/icons/phone.svg') no-repeat center / cover
+.address
+  &::before
+    width: 13px
+    height: 13px
+    background: url('../img/icons/map.svg') no-repeat center / cover
+a.logo
+  display: flex
+  flex-direction: column
+  text-align: center
+  font-size: rem(22)
+  & h1
+    margin: 0
+    font-size: rem(22)
+  & img
+    margin: 0 auto
+    width: 48px
+    height: 60px
+    margin-bottom: 6px
+  & span
+    font-size: rem(10)
+    line-height: 1
+
+.nav
+  margin-top: rem(11)
+  & ul
+    display: flex
+    justify-content: space-between
+    background: $menu
+    margin: 0
+    padding-left: 0
+    list-style-type: none
+    & li
+      width: 100%
+      position: relative
+      & a
+        display: inline-block
+        width: 100%
+        text-align: center
+        padding: 31px 15px 24px 15px
+        font-family: 'Proxima-Bold'
+        font-size: rem(14.5)
+        line-height: rem(26)
+        font-weight: 600
+        text-transform: uppercase
+        letter-spacing: 0.06em
+        color: $light
+        text-decoration: none
+        &:hover
+          background: $menu-hov
+      & > ul
+        position: absolute
+        left: 0
+        top: 100%
+        width: 100%
+        display: none
+        flex-direction: column
+        background: $menu-hov
+        & a
+          padding: 14px 15px 14px 38px
+          text-align: left
+          font-size: rem(14)
+          text-transform: none
+          &:hover
+            background: $submenu-hov
+      &:hover > ul 
+        display: flex
+    & .submenu
+      & > a
+        display: flex
+        justify-content: center
+        align-items: center
+        &::after
+          content: ''
+          width: 12px
+          height: 9px
+          margin-left: 10px
+          background: url('../img/icons/menu-arrow.svg') no-repeat center / cover

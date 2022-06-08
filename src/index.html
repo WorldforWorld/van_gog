@@ -5,9 +5,9 @@
   })
   <body>
     @@include('html/header.html', {})
+    @@include('html/grid.html', {})
     <main>
-      <span>Привет!</span>
-      <img src="@img/cover.jpg" alt="">
+      @@include('html/hero.html', {})
     </main>
     @@include('html/footer.html', {})
     <script src="js/app.min.js"></script>
