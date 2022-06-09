@@ -5,6 +5,7 @@
     grid-gap: 30px
     margin-top: 50px
   &__item
+    width: 100%
     & a
       display: flex
       flex-direction: column
@@ -34,10 +35,10 @@
   &__desk
     position: relative
     width: 100%
-    background: red
     margin: 0
     padding-bottom: 8px
     padding-left: 42px
+    padding-right: 15px
     font-size: rem(19)
     line-height: rem(25)
     font-weight: 700
@@ -56,3 +57,12 @@
       height: 99px
       background: $light
       z-index: -1
+
+@media screen and (max-width: 788px)
+  .service
+    &__wrap
+      display: flex
+      flex-direction: column
+    &__item
+      display: flex
+      justify-content: center

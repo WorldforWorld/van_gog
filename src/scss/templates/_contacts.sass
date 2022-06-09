@@ -9,9 +9,10 @@
       padding-right: 55px      
   &__address,
   &__mail,
-  &__phone
+  &__phone--black
     color: $text !important
     margin-bottom: 30px
+    margin-left: 29px
   &__mail
     position: relative
     &::before
@@ -25,3 +26,8 @@
       background: url('../img/icons/mail.png') no-repeat center / cover
   &__phone
     margin-left: 29px
+
+@media screen and (max-width: 776px)
+  .contacts
+    &__wrap
+      justify-content: space-between

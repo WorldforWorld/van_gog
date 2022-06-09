@@ -112,3 +112,22 @@ a.logo
           height: 9px
           margin-left: 10px
           background: url('../img/icons/menu-arrow.svg') no-repeat center / cover
+          
+@media screen and (max-height: 500px) , (max-width: 1020px)
+  .nav
+    & ul
+      & li
+        & a
+          padding: 15px 10px 15px 10px !important
+
+@media screen and (max-height: 400px), (max-width: 420px)
+  .header__nav.nav ul > li > ul
+    position: fixed
+    right: 0
+    width: auto
+    max-width: 134px
+    top: 30px
+    right: 204px
+@media screen and (max-width: 420px)
+  .header__nav.nav ul > li > ul
+    right: 177px

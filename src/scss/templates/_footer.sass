@@ -4,6 +4,7 @@
     display: flex
     justify-content: space-between
     align-items: center
+    flex-wrap: wrap
     padding: 35px 76px
     border-top: 1px solid rgba($grid, 0.2) 
     &::before
@@ -15,6 +16,7 @@
       background: $light  
       z-index: 1
 .copywriter
+  padding-right: 45px
   opacity: 0.6
   font-size: rem(13.2)
   line-height: rem(20)
@@ -46,3 +48,8 @@
     width: 29px
     height: 29px
     background: url('../img/icons/grpup.svg') no-repeat center / cover
+    
+@media screen and (max-width: 430px)
+  .footer
+    &__wrap
+      padding: 15px 35px

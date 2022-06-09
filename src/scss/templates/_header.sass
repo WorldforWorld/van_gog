@@ -10,3 +10,51 @@
     & .header__menu,
     & .header__nav
       margin-top: 0
+
+@media screen and (max-height: 590px) , (max-width: 1130px)
+  .menu
+    &__logo
+      & img
+        display: none
+@media screen and (max-width: 992px)
+  .header
+    overflow: hidden
+    &__burger--active-js
+      & > div
+        &:first-child
+          transform: rotate(45deg) 
+          width: 40px
+        &:last-child
+          transform: rotate(-45deg) 
+          width: 40px
+        &:nth-of-type(2)
+          display: none
+    &__contacts.contacts
+      display: none
+    &__menu.menu,
+    &__nav.nav
+      margin-top: 0
+    &__nav.nav
+      position: fixed
+      right: -200px
+      top: 30px
+      display: flex
+      & ul
+        flex-direction: column
+        & > li
+          & > a
+            justify-content: space-between
+            text-align: left
+          & > ul
+            left: inherit
+            right: 100%
+            top: 0
+    &__nav
+      &--active-js
+        right: 70px !important
+        
+@media screen and (max-width: 420px)
+  .header
+    &__nav
+      &--active-js
+        right: 44px !important

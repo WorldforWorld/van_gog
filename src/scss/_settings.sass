@@ -9,5 +9,13 @@ body
 section
   &:not(:first-child)
     margin-top: 70px    
+
+@media screen and (max-height: 700px)
+  section:not(:first-child) 
+    margin-top: 30px
 img
   max-width: 100%
+  
+@media screen and (max-height: 590px) , (max-width: 1130px)
+  html
+    font-size: 12px

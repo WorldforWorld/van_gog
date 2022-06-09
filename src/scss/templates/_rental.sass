@@ -54,3 +54,49 @@
   &__selection
     display: flex
     margin-top: 100px
+    
+@media screen and (max-width: 1078px)
+  .rental
+    &__desk
+      &::before
+        display: none
+    &__btn
+      margin-left: 0
+@media screen and (max-width: 978px)
+  .rental
+    &__slide
+      position: relative
+    &__wrap
+      position: absolute
+      left: 40px
+      top: 0
+      height: 100%
+      width: 100%
+      padding: 65px
+      background-color: rgba($light, 0.7)
+    &__selection
+      margin-top: 50px
+@media screen and (max-width: 720px)
+  .rental
+    &__selection
+      flex-direction: column
+  .selection
+    &__item
+      &:not(:last-child)
+        margin-bottom: 15px
+        
+@media screen and (max-width: 474px)
+  .rental
+    &__wrap 
+      padding: 20px 
+  .selection
+    &__arrow
+      margin-right: 10px
+@media screen and (max-width: 360px)
+    .rental
+      &__slide
+        flex-direction: column
+      &__wrap
+        position: relative
+        left: initial
+        top: initial
