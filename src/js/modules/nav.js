@@ -59,6 +59,8 @@ export function nav() {
       // e.preventDefault();
       menu.classList.remove('open');
       overlay.classList.remove('open');
+      burger.classList.remove('open');
+      burger.classList.remove('open');
       unlockScroll();
     }
 
