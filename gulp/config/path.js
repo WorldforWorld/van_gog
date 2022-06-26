@@ -12,10 +12,10 @@ export const path = {
     html: `${buildFolder}/`,
     images: `${buildFolder}/img/`,
     fonts: `${buildFolder}/fonts/`,
-    files: `${buildFolder}/files/`
+    files: `${buildFolder}/files/`,
+    favicon: `${buildFolder}/img/favicon/`
   },
   src: {
-    // html: `${srcFolder}/*.pug`,
     js: `${srcFolder}/js/app.js`,
     images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
     svg: `${srcFolder}/img/**/*.svg`,
@@ -23,6 +23,7 @@ export const path = {
     html: `${srcFolder}/*.html`, // .pug
     files: `${srcFolder}/files/**/*.*`,
     svgicons: `${srcFolder}/svgicons/*.svg`,
+    favicon: `${srcFolder}/img/favicon/favicon.svg`,
   },
   watch: {
     js: `${srcFolder}/js/**/*.js`,
@@ -30,6 +31,7 @@ export const path = {
     html: `${srcFolder}/**/*.html`, //.pub
     images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
     files: `${srcFolder}/files/**/*.*`,
+    favicon: `${srcFolder}/img/favicon/favicon.svg`,
   },
   clean: buildFolder,
   buildFolder: buildFolder,

@@ -1,0 +1,330 @@
+.menu 
+	display: flex
+	flex-direction: column
+	margin-top: 0.6875rem
+	transition: .4s
+.contacts
+	display: flex
+	justify-content: space-around
+	align-items: center
+	overflow: hidden
+	transition: 0.4s
+	& a 
+		font-family: 'Gotham Pro', sans-serif
+		font-size: rem(15)
+		line-height: 24px
+		font-weight: 600
+		text-decoration: none
+		color: $light
+		&:not(:nth-of-type(2))
+			color: $light-text
+			position: relative
+			&::before
+				content: ''
+				position: absolute
+				left: -31px
+				top: calc(50% - 8px)
+				display: inline-block
+		& span
+			display: block
+			font-weight: 400
+.phone
+	&::before
+		width: 15px
+		height: 15px
+		background: url('../img/icons/phone.svg') no-repeat center / cover
+.address
+	&::before
+		width: 13px
+		height: 15px
+		background: url('../img/icons/map.svg') no-repeat center / cover
+a.logo
+	display: flex
+	flex-direction: column
+	text-align: center
+	font-size: rem(22)
+	& h1
+		margin: 0
+		font-size: rem(22)
+	& img
+		margin: 0 auto
+		width: 48px
+		height: 60px
+		margin-bottom: 6px
+	& span
+		font-size: rem(10)
+		line-height: 1
+		
+.nav
+	margin-top: rem(11)
+	transition: 0.4s
+	@media (max-width: 992px), (max-height: 415px)  
+		position: fixed
+		left: 0
+		top: 0
+		max-width: 400px
+		width: 80%
+		height: 100vh
+		z-index: 100
+		box-shadow: 5px 0 15px -5px rgba(0,0,0, 0.8)
+		background-color: $menu
+		transform: translateX(-150vw)
+		overflow-x: hidden
+		overflow-y: auto
+		margin-top: 0
+
+	&__list 
+		display: flex
+		justify-content: space-between
+		background: $menu
+		margin: 0
+		padding-left: 0
+		list-style-type: none
+		@media (max-width: 992px), (max-height: 415px)  
+			flex-direction: column
+			align-items: flex-start
+			padding: 0
+			position: relative
+		&.transformation 
+			@media (max-width: 992px), (max-height: 415px)  
+				transform: translateX(-100%)
+				transition: all 0.3s
+		&--dropdown 
+			position: absolute
+			right: 0
+			top: 100%
+			flex-direction: column
+			transition: all 0.3s
+			opacity: 0
+			visibility: hidden
+			width: 100%
+			@media (max-width: 992px), (max-height: 415px)  
+				position: absolute
+				top: 0
+				right: auto
+				left: 100%
+				box-shadow: none
+				width: 100%
+				display: none
+			&.transformation
+				@media (max-width: 992px), (max-height: 415px)  
+					opacity: 1
+					visibility: visible
+					display: block
+					transform: none
+					transition: all 0.3s
+
+	&__item
+		position: relative
+		width: 100%
+		@media (min-width: 769px) 
+			&:hover .nav__list--dropdown 
+				visibility: visible
+				opacity: 1
+				transition: all 0.3s
+		@media (max-width: 992px), (max-height: 415px)  
+			margin-left: 0 !important
+			font-size: 20px
+			width: 100%
+			padding: 0
+			position: static
+
+	&__link
+		padding: 15px 10px
+		display: inline-block
+		width: 100%
+		text-align: center
+		padding: 31px 15px 24px 15px
+		font-family: 'Proxima-Bold'
+		font-size: .90625rem
+		line-height: 1.625rem
+		font-weight: 600
+		text-transform: uppercase
+		letter-spacing: .06em
+		color: $light
+		text-decoration: none
+		&:hover
+			background: $menu-hov
+		@media (max-width: 992px), (max-height: 415px)  
+			padding: 20px 30px
+			width: 100%
+			display: flex
+			justify-content: space-between
+			align-items: center
+			border-bottom: 1px solid $grid
+		&::after
+			@media (max-width: 992px), (max-height: 415px)  
+				transform: rotate(-90deg)
+		@media screen and (max-height: 500px), (max-width: 1020px)
+			padding: 15px 10px 15px 10px
+		&--drop
+			&::after 
+				content: ""
+				width: 10px
+				height: 10px
+				background-image: url('../img/icons/menu-arrow.svg')
+				background-size: cover
+				background-position: center
+				background-repeat: no-repeat
+				display: inline-block
+				margin-left: 5px
+				transition: transform 0.3s
+			@media (min-width: 769px) 
+				&:hover::after 
+					transform: rotate(180deg)
+					transition: all 0.3s
+
+	&.open
+		@media (max-width: 992px), (max-height: 415px)  
+			transform: translateX(0)
+			transition: all 0.3s
+
+.dropdown
+	&-submenu 
+		display: flex
+		align-items: initial
+		&__list 
+			padding: 0
+			@media (max-width: 992px), (max-height: 415px)  
+				background-color: $menu-hov
+			&-item, 
+			&__item 
+				list-style: none
+			&-item a
+				@media (max-width: 992px), (max-height: 415px)  
+					padding: 20px 30px
+					width: 100%
+					display: flex
+					justify-content: space-between
+					align-items: center
+					border-bottom: 1px solid $grid
+		&__item 
+			flex-grow: 1
+			&:not(:last-child) 
+				border-right: 1px solid $grid
+			&:first-child 
+				padding-left: 0
+			&:last-child 
+				padding-right: 0
+			@media (max-width: 992px), (max-height: 415px)  
+				width: 100%
+				padding: 0
+				border: none !important
+		&__banner
+			@media (max-width: 992px), (max-height: 415px)  
+				display: inline-block
+				padding: 20px
+	
+	&-list 
+		list-style: none
+		&__link
+			width: 100%
+			padding: 14px 15px 14px 38px
+			text-align: left
+			font-size: .875rem
+			text-transform: none
+			display: inline-block
+			font-family: 'Proxima-Bold'
+			line-height: 1.625rem
+			font-weight: 600
+			letter-spacing: .06em
+			color:$light
+			text-decoration: none
+			&:hover
+				background-color: $submenu-hov
+			@media (max-width: 992px), (max-height: 415px) 
+				padding: 20px 30px
+				width: 100%
+				display: flex
+				justify-content: space-between
+				align-items: center
+				border-bottom: 1px solid $grid
+				background-color: $menu-hov
+
+.mobile-back 
+	display: none
+	@media (max-width: 992px), (max-height: 415px) 
+		display: block
+	& a
+		@media (max-width: 992px), (max-height: 415px)  
+			position: relative
+			border: none
+			display: flex
+			align-items: center
+			justify-content: flex-start
+		&::before
+			@media (max-width: 992px), (max-height: 415px)  
+				content: ""
+				width: 10px
+				height: 10px
+				background-image: url("../img/icons/menu-arrow.svg")
+				background-size: cover
+				background-position: center
+				background-repeat: no-repeat
+				display: inline-block
+				margin-right: 10px
+				transform: rotate(90deg)
+			
+
+.burger 
+	width: 30px
+	height: 22px
+	cursor: pointer
+	background-color: transparent
+	border: none
+	position: relative
+	display: none
+	margin-left: auto
+	@media (max-width: 992px), (max-height: 415px)  
+		display: block		
+	&::before,
+	&::after 
+		content: ""
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 10%
+		background-color: $primary-hov
+		transition: all 0.3s ease 0s
+	&::after 
+		top: auto
+		bottom: 0
+	& span 
+		position: absolute
+		left: 0
+		top: 50%
+		transform: scale(1) translate(0px, -50%)
+		width: 100%
+		height: 10%
+		display: inline-block
+		background-color: $primary-hov
+		transition: all 0.3s ease 0s
+	&.open
+		&::before
+			top: 50%
+			transform: rotate(-45deg) translate(0px, -50%)
+		&::after
+			bottom: 50%
+			transform: rotate(45deg) translate(0px, 50%)
+		& span
+			transform: scale(0) translate(0px, -50%)			
+
+.overlay 
+	position: fixed
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(0,0,0, 0.5)
+	z-index: 99
+	opacity: 0
+	visibility: hidden
+	&.open
+		@media (max-width: 992px), (max-height: 415px)  
+			opacity: 1
+			visibility: visible
+			transition: all 0.3s
+
+.lock 
+	overflow: hidden

@@ -11,7 +11,8 @@ global.app = {
   isDev: !process.argv.includes('--build'),
   path: path,
   gulp: gulp,
-  plugins: plugins
+  plugins: plugins,
+  favicon: favicon
 };
 
 // Импорт задач
@@ -26,6 +27,7 @@ import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
 import { svgSprive } from "./gulp/tasks/svgSprive.js";
 import { zip } from "./gulp/tasks/zip.js";
 import { ftp } from "./gulp/tasks/ftp.js";
+import { favicon } from "./gulp/tasks/favicon.js";
 
 // Наблюдатель за изменениями в файле
 function watcher() {
@@ -39,6 +41,8 @@ function watcher() {
   // gulp.watch(path.watch.js, gulp.series(js, ftp))
   gulp.watch(path.watch.images, images); 
   // gulp.watch(path.watch.images, gulp.series(images, ftp))
+  gulp.watch(path.watch.favicon, favicon); 
+  // gulp.watch(path.watch.favicon, gulp.series(favicon, ftp))
 }
 
 export { svgSprive };
@@ -47,12 +51,13 @@ export { svgSprive };
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 
 // Основные задачи
-const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
+const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images, favicon));
 
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
-const deployZIP = gulp.series(reset, mainTasks, zip);
+const deployZIP = gulp.series(zip);
+// const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
 
 // Экспорт сценариев
@@ -60,6 +65,7 @@ export { dev }
 export { build }
 export { deployZIP }
 export { deployFTP }
+export { favicon }
 
 // Выполнение сценария по умолчанию
 gulp.task('default', dev);

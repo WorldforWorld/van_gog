@@ -1,10 +1,13 @@
-import * as flsFunctions from "./modules/functions.js";
-import * as swiperSlider from "./modules/swiper.js";
 import * as jquery from "./modules/jquery.js";
+import * as swiperSlider from "./modules/swiper.js";
+import * as flsFunctions from "./modules/functions.js";
+import * as navInit from "./modules/nav.js";
 
-flsFunctions.isWebp();
 document.addEventListener("DOMContentLoaded", function() {
+  flsFunctions.isWebp();
+  navInit.nav();
 
+  // Слайдер в секции hero
   const heroSwiper = new Swiper ('.hero .swiper', {
     loop: true,
     autoplay: {
@@ -39,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   renderBullets ();
-
+  // Слушатель мутации слайдера в секции hero
   const pagination = document.querySelector('.swiper-pagination');
   let observer = new MutationObserver(function(mutations) {
     for (let mutation of mutations) {
@@ -51,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   observer.observe(pagination, { attributes: true });
 
-
+  // Слайдер в секции rental
   const rentalSwiper = new Swiper ('.rental__swiper', {
     loop: true,
     autoplay: {
@@ -78,48 +81,24 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // Клик по бургер меню
-  let hamburger = document.querySelector('.header__burger');
-  let menu = document.querySelector('.header__nav');
-
-  const toggleMenu = () => {
-    menu.classList.toggle('header__nav--active-js');
-    hamburger.classList.toggle('header__burger--active-js');
-  }
-
-  hamburger.addEventListener('click', e => {
-    e.stopPropagation();
-
-    toggleMenu();
-  });
-
-  document.addEventListener('click', e => {
-    let target = e.target;
-    let its_menu = target == menu || menu.contains(target);
-    let its_hamburger = target == hamburger;
-    let menu_is_active = menu.classList.contains('header__nav--active-js');
-    
-    if (!its_menu && !its_hamburger && menu_is_active) {
-      toggleMenu();
-    }
-  });
-
   // Плавный скролл по клику меню
-  $(menu).on('click','a', function (event) {
-    event.preventDefault();
-    var id  = $(this).attr('href'),
-    top = $(id).offset().top - headerContacts.clientHeight - 80;
-    $('body,html').animate({scrollTop: top}, 1500);
-    
-    $('#mouse').on('click', function (e) {
+  $(menu).on('click','a', function (e) {
+    if($(this).attr('href') != '#') {
       e.preventDefault();
       var id  = $(this).attr('href'),
       top = $(id).offset().top - headerContacts.clientHeight - 80;
-      $('body,html').animate({scrollTop: top}, 800);
-    });
+      $('body,html').animate({scrollTop: top}, 1500);      
+    }    
   });  
 
-  $('.btn').on('click', function (event) {
-    event.preventDefault();
+  $('#mouse').on('click', function (e) {
+    e.preventDefault();
+    var id  = $(this).attr('href'),
+    top = $(id).offset().top - headerContacts.clientHeight - 80;
+    $('body,html').animate({scrollTop: top}, 800);
+  });
+
+  $('.btn').on('click', function (e) {
+    e.preventDefault();
   });
 });

@@ -1,5 +1,5 @@
 {
-  "name": "control_test",
+  "name": "Van Gog",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -13,21 +13,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WorldforWorld/control_test.git"
+    "url": "git+https://github.com/WorldforWorld/van_gog.git"
   },
   "author": "Yuri",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WorldforWorld/control_test/issues"
+    "url": "https://github.com/WorldforWorld/van_gog/issues"
   },
-  "homepage": "https://github.com/WorldforWorld/control_test#readme",
+  "homepage": "https://github.com/WorldforWorld/van_gog#readme",
   "devDependencies": {
     "browser-sync": "latest",
     "del": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-clean-css": "latest",
+    "gulp-favicons": "^3.0.0",
     "gulp-file-include": "latest",
+    "gulp-filter": "^7.0.0",
     "gulp-fonter": "latest",
     "gulp-group-css-media-queries": "latest",
     "gulp-if": "latest",

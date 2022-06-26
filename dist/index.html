@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/icons/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.min.css?_v=20220609142413">
+  <link rel="icon" href="img/favicon/favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.min.css?_v=20220627035203">
   <title>VAN GOG</title>
 </head>
   <body>
@@ -14,43 +16,52 @@
     <div class="menu header__menu" id="menu">
       <div class="contacts menu__contacts header__contacts">
         <a href="tel:+78002000600" class="phone contacts__phone"><span>телефон администратора</span> 8 800 2000 600</a>
-        <a class="logo menu__logo" href="index.html"><picture><source srcset="img/icons/favicon.webp" type="image/webp"><img src="img/icons/favicon.png" alt="logo"></picture><h1>VAN GOG</h1><span>фотостудия</span></a>
-        <a class="address menu__address" href="https://it-tian.ru/kontakty.html"><span>адрес фотостудии</span> Челябинск, Худякова, 12а</a>
+        <a class="logo menu__logo" href="index.html"><picture><source srcset="img/icons/logo.webp" type="image/webp"><img src="img/icons/logo.png" alt="logo"></picture><h1>VAN GOG</h1><span>фотостудия</span></a>
+        <a class="address menu__address" href="https://it-tian.ru/kontakty.html"><span>адрес фотостудии</span> Челябинск, Худякова, 12</a>
       </div>
-      <nav class="nav menu__nav header__nav">
-        <ul>
-          <li class="submenu"><a href="#about" class="nav__item">О компании</a>
-            <ul>
-              <li><a href="#">Наша фотостудия</a></li>
-              <li><a href="#">Отзывы</a></li>
-              <li><a href="#">Частые вопросы</a></li>
-            </ul>
-          </li>
-          <li class="submenu"><a href="#rental" class="nav__item">Аренда залов</a>
-            <ul>
-              <li><a href="#">Расписание и бронирование</a></li>
-              <li><a href="#">Организация мероприятий</a></li>
-            </ul>
-          </li>
-          <li class="submenu"><a href="#service" class="nav__item">Фотосессии</a>
-            <ul>
-              <li><a href="#">Семейная Фотосессия</a></li>
-              <li><a href="#">Детская Фотосессия</a></li>
-              <li><a href="#">Индивидуальная Фотосессия</a></li>
-              <li><a href="#">Свадебная Фотосессия</a></li>
-              <li><a href="#">Love Story Фотосессия</a></li>
-            </ul>
-          </li>
-          <li><a href="#rules" class="nav__item">Правила</a></li>
-          <li><a href="#advantages" class="nav__item">Портфолио</a></li>
-          <li><a href="#contacts" class="nav__item">Контакты</a></li>
-        </ul>
-      </nav>
-      <div class="burger__menu header__burger">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <div class="overlay"></div>
+<nav class="nav header__nav">
+  <ul class="nav__list">
+    <li class="nav__item">
+      <a href="#about" class="nav__link nav__link--drop">О компании</a>
+      <ul class="nav__list nav__list--dropdown dropdown-list dropdown-submenu">
+        <li class="dropdown-list__item mobile-back"><a href="#" class="dropdown-list__link mobile-back__link">Назад</a></li>
+        <li class="dropdown-submenu__item">
+          <ul class="dropdown-submenu__list">
+            <li class="dropdown-submenu__list-item"><a href="#" class="dropdown-list__link">Наша фотостудия</a></li>
+            <li class="dropdown-submenu__list-item"><a href="#" class="dropdown-list__link">Отзывы</a></li>
+            <li class="dropdown-submenu__list-item"><a href="#" class="dropdown-list__link">Частые вопросы</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="nav__item">
+      <a href="#rental" class="nav__link nav__link--drop">Аренда залов</a>
+      <ul class="nav__list nav__list--dropdown dropdown-list">
+        <li class="dropdown-list__item mobile-back"><a href="#" class="dropdown-list__link mobile-back__link">Назад</a></li>
+        <li class="dropdown-list__item"><a href="#" class="dropdown-list__link">Расписание и бронирование</a></li>
+        <li class="dropdown-list__item"><a href="#" class="dropdown-list__link">Организация мероприятий</a></li>
+      </ul>
+    </li>
+    <li class="nav__item">
+      <a href="#service" class="nav__link nav__link--drop">Фотосессии</a>
+      <ul class="nav__list nav__list--dropdown dropdown-list">
+        <li class="dropdown-list__item mobile-back"><a href="#" class="dropdown-list__link mobile-back__link">Назад</a></li>
+        <li class="dropdown-list__item"><a href="#" class="dropdown-list__link">Семейная Фотосессия</a></li>
+        <li class="dropdown-list__item"><a href="#" class="dropdown-list__link">Детская Фотосессия</a></li>
+        <li class="dropdown-list__item"><a href="#" class="dropdown-list__link">Индивидуальная Фотосессия</a></li>
+        <li class="dropdown-list__item"><a href="#" class="dropdown-list__link">Свадебная Фотосессия</a></li>
+        <li class="dropdown-list__item"><a href="#" class="dropdown-list__link">Love Story Фотосессия</a></li>
+      </ul>
+    </li>
+    <li class="nav__item"><a href="#rules" class="nav__link">Правила</a></li>
+    <li class="nav__item"><a href="#advantages" class="nav__link">Портфолио</a></li>
+    <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+  </ul>
+</nav>
+<button class="burger" aria-label="Открыть меню">
+  <span></span>
+</button>
     </div>
   </div>
   <!-- /.container -->
@@ -144,8 +155,8 @@
       <section class="advantages" id="advantages">
   <div class="container">
     <div class="advantages__wrap">
-      <h3 class="section__title">Наши преимущества</h3>
-      <h4 class="section__desk">5 причин прийти к нам</h4>
+      <span class="section__title">Наши преимущества</span>
+      <h4 class="section__desk">5 причин прийти к нам</h3>
       <div class="reasons">
         <div class="reasons__item">
           <img src="img/advantage/advantage.svg" alt="advantage">
@@ -188,8 +199,8 @@
       <section class="about">
   <div class="container">
     <div class="about__wrap">
-      <h3 class="section__title">О компании</h3>
-      <h4 class="section__desk">Наша фотостудия</h4>
+      <span class="section__title">О компании</span>
+      <h3 class="section__desk">Наша фотостудия</h4>
       <picture><source srcset="img/icons/logo-bg.webp" type="image/webp"><img src="img/icons/logo-bg.png" alt="" class="watermark about__watermark"></picture>
       <h5 class="about__slogan">Van Gog фотостудия это творческое арт - пространство для реализации любых идей и задач!</h5>
       <p class="about__subtitle">Это не просто студия для сьемки, это целый комплекс услуг для вас и ваших близких!.</p>
@@ -203,8 +214,8 @@
 <!-- /.about -->
       <section class="service" id="service">
   <div class="container">
-    <h3 class="section__title">Услуги</h3>
-    <h4 class="section__desk">Фотосессии</h4>
+    <span class="section__title">Услуги</span>
+    <h3 class="section__desk">Фотосессии</h3>
     <div class="service__wrap">
       <div class="service__item">
         <a href="#">
@@ -344,8 +355,8 @@
 <!-- /.about -->
       <section class="rental" id="rental">
   <div class="container">
-    <h3 class="section__title">Aренда</h3>
-    <h4 class="section__desk">Наши залы</h4>
+    <span class="section__title">Aренда</span>
+    <h3 class="section__desk">Наши залы</h3>
     <!-- Slider main container -->
     <div class="swiper rental__swiper">
       <!-- Additional required wrapper -->
@@ -422,12 +433,17 @@
   <div class="container">
     <div class="footer__wrap">
       <p class="copywriter">© ИП Фёдоров С.С., 2017</p>
-      <a href="https://it-tian.ru" class="promo"><span class="promo__upper">Интернет-агентство Tian Group:</span><span class="promo__decoration">создание и продвижение сайтов Челябинск</span></a>
+      <div class="promo">
+        <span class="promo__upper">Интернет-агентство Tian Group:</span>
+        <span class="promo__decoration">
+          <a href="https://it-tian.ru">создание</a> и <a href="#">продвижение сайтов Челябинск</a>
+        </span>
+      </div>
     </div>
     <!-- /.footer__wrap -->
   </div>
   <!-- /.container -->
 </footer>
-    <script src="js/app.min.js?_v=20220609142413"></script>
+    <script src="js/app.min.js?_v=20220627035203"></script>
   </body>
 </html>

@@ -16,9 +16,10 @@
     &__logo
       & img
         display: none
-@media screen and (max-width: 992px)
+@media (max-width: 992px), (max-height: 415px)
   .header
     overflow: hidden
+    top: 30px
     &__burger--active-js
       & > div
         &:first-child
@@ -32,9 +33,9 @@
     &__contacts.contacts
       display: none
     &__menu.menu,
-    &__nav.nav
+    &__nav1.nav1
       margin-top: 0
-    &__nav.nav
+    &__nav1.nav1
       position: fixed
       right: -200px
       top: 30px
@@ -49,12 +50,12 @@
             left: inherit
             right: 100%
             top: 0
-    &__nav
+    &__nav1
       &--active-js
         right: 70px !important
         
 @media screen and (max-width: 420px)
   .header
-    &__nav
+    &__nav1
       &--active-js
         right: 44px !important
